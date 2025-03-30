@@ -59,34 +59,34 @@ const Index = () => {
       <section className="pt-32 md:pt-40 pb-20 px-6">
         <div className="container mx-auto">
           <div className="max-w-3xl">
-            <h1 className="opacity-0 animate-fade-up-delay-1">
-              <span className="hero-heading">
+            <div className="opacity-0 animate-fade-up-delay-1 mb-6">
+              <h1 className="hero-heading">
                 I craft
-                <span className="relative inline-block ml-2">
-                  <SkillTag variant="pink" className="absolute -top-8 -left-6">UI Design</SkillTag>
-                  intuitive,
-                </span>
-                <span className="relative inline-block ml-2">
-                  <SkillTag variant="mint" className="absolute -top-6 left-16">Development</SkillTag>
-                  clean designs,
-                </span>
-              </span>
-            </h1>
+                <div className="hero-text-highlight mx-2">
+                  <SkillTag variant="pink" className="hero-text-label -left-6">UI Design</SkillTag>
+                  <span>intuitive,</span>
+                </div>
+                <div className="hero-text-highlight ml-2">
+                  <SkillTag variant="mint" className="hero-text-label left-16">Development</SkillTag>
+                  <span>clean designs,</span>
+                </div>
+              </h1>
+            </div>
 
-            <h2 className="opacity-0 animate-fade-up-delay-2 mt-3">
-              <span className="hero-heading">
+            <div className="opacity-0 animate-fade-up-delay-2 mb-6">
+              <h1 className="hero-heading">
                 also
-                <span className="relative inline-block ml-2 italic">
-                  <SkillTag variant="lavender" className="absolute -top-6 left-20">UX Research</SkillTag>
-                  unique
-                </span>
-                & 
-                <span className="relative inline-block ml-2">
-                  <SkillTag variant="cream" className="absolute -top-6 right-10">Animation</SkillTag>
-                  empathic experiences.
-                </span>
-              </span>
-            </h2>
+                <div className="hero-text-highlight mx-2 italic">
+                  <SkillTag variant="lavender" className="hero-text-label left-20">UX Research</SkillTag>
+                  <span>unique</span>
+                </div>
+                &amp; 
+                <div className="hero-text-highlight ml-2">
+                  <SkillTag variant="cream" className="hero-text-label right-10">Animation</SkillTag>
+                  <span>empathic experiences.</span>
+                </div>
+              </h1>
+            </div>
 
             <p className="hero-subheading opacity-0 animate-fade-up-delay-3 mt-8 max-w-2xl">
               I'm a passionate web developer and UI/UX designer dedicated to creating beautiful, 

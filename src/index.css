@@ -48,7 +48,7 @@
   }
 
   .skill-tag {
-    @apply px-3 py-1 rounded-full text-sm font-medium opacity-0;
+    @apply px-3 py-1 rounded-full text-sm font-medium opacity-0 z-10;
     animation: fadeIn 0.5s forwards;
   }
   
@@ -58,13 +58,25 @@
   }
 
   .hero-heading {
-    @apply text-5xl md:text-6xl font-serif font-bold leading-tight;
+    @apply text-5xl md:text-6xl font-serif font-bold leading-tight relative z-0;
     background: linear-gradient(120deg, #ff9a9e 0%, #fad0c4 100%);
     background-size: 200% auto;
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
     animation: gradient-shift 5s ease infinite;
+  }
+
+  .hero-container {
+    @apply relative;
+  }
+
+  .hero-text-highlight {
+    @apply relative inline-block;
+  }
+
+  .hero-text-label {
+    @apply absolute -top-8 z-10;
   }
 
   .hero-subheading {
