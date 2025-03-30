@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Roboto+Mono:wght@400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -44,34 +44,27 @@
 
   body {
     @apply bg-background text-foreground font-sans;
+    background-image: linear-gradient(to right, rgba(254, 240, 255, 0.2) 0%, rgba(230, 255, 250, 0.2) 100%);
   }
 
   .skill-tag {
     @apply px-3 py-1 rounded-full text-sm font-medium opacity-0;
     animation: fadeIn 0.5s forwards;
   }
-
-  .skill-tag-animation-pink {
-    @apply bg-pink-light text-pink-dark animate-float;
-  }
-
-  .skill-tag-animation-mint {
-    @apply bg-mint-light text-mint-dark animate-float;
-    animation-delay: 0.5s;
-  }
-
-  .skill-tag-animation-lavender {
-    @apply bg-lavender-light text-lavender-dark animate-float;
-    animation-delay: 1s;
-  }
-
-  .skill-tag-animation-cream {
-    @apply bg-cream-light text-cream-dark animate-float;
-    animation-delay: 1.5s;
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
   }
 
   .hero-heading {
     @apply text-5xl md:text-6xl font-serif font-bold leading-tight;
+    background: linear-gradient(120deg, #ff9a9e 0%, #fad0c4 100%);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradient-shift 5s ease infinite;
   }
 
   .hero-subheading {
@@ -80,11 +73,16 @@
 
   .section-heading {
     @apply text-3xl font-serif font-semibold mb-6 relative inline-block;
+    background: linear-gradient(to right, #ff9a9e 0%, #fad0c4 100%);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
   }
 
   .section-heading::after {
     content: '';
-    @apply absolute bottom-0 left-0 w-full h-0.5 bg-pink-dark transform scale-x-0 transition-transform duration-300 origin-bottom-left;
+    @apply absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-pink-dark to-lavender-dark transform scale-x-0 transition-transform duration-300 origin-bottom-left;
   }
 
   .section-heading:hover::after {
@@ -92,13 +90,15 @@
   }
 
   .cursor-dot {
-    @apply fixed w-3 h-3 bg-pink-dark rounded-full pointer-events-none z-50 transition-transform duration-100 ease-out;
+    @apply fixed w-3 h-3 bg-gradient-to-r from-pink-dark to-lavender-dark rounded-full pointer-events-none z-50 transition-transform duration-100 ease-out;
     mix-blend-mode: difference;
     transform: translate(-50%, -50%);
   }
 
   .project-card {
     @apply relative bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
   }
 
   .project-card:hover .project-card-content {
@@ -114,10 +114,35 @@
   }
 
   .button-primary {
-    @apply bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800 transition-colors duration-300 inline-flex items-center justify-center font-medium;
+    @apply bg-gradient-to-r from-pink-dark to-lavender-dark text-white px-6 py-3 rounded-full hover:from-lavender-dark hover:to-pink-dark transition-all duration-300 inline-flex items-center justify-center font-medium shadow-md hover:shadow-lg;
   }
 
   .tag {
     @apply px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .text-reveal-container {
+    @apply relative overflow-hidden;
+  }
+  
+  .text-reveal-item {
+    @apply opacity-0 transform translate-y-full;
+  }
+
+  .animated-background {
+    @apply absolute inset-0 -z-10;
+    background: linear-gradient(-45deg, #ffefba, #ffffff, #ede9fe, #f5f5f5);
+    background-size: 400% 400%;
+    animation: gradient-shift 15s ease infinite;
+  }
+
+  .animated-shape {
+    @apply absolute rounded-full opacity-20;
+  }
+
+  @keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
   }
 }
